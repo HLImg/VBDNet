@@ -1,2 +1,2 @@
 # VBDNet
-Variational Bayesian Deep Network for Poisson Denoising
+Because of some causes, we will update code soon.
