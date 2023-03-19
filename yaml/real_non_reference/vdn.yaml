@@ -1,0 +1,48 @@
+global_setting:
+  seed: 20000320 # random seed
+  device : '1' # gpu device id
+  action : 'real'
+  task: 'denoise'
+  record_dir : 'Experiment' # inlet for experiments' results
+  note_name: 'vdn_real' # the dir name in experiments log
+  resume :
+    state: True
+    mode : "model"
+    checkpoint : "./model_zoo/vdn/vdn.pth"
+
+
+directory:
+  vision : 'visions'
+  resume : 'resume_model'
+
+network:
+  task: 'denoise'
+  name : 'vdn'
+  mode : 'gray' # the image type
+  params:
+    in_ch : 1
+    wf : 64
+    dep_S : 5
+    dep_U : 4
+    slope : 0.2
+
+
+
+dataset:
+  name : 'unpair'
+  task :
+    name: 'denoise'
+    noise: 'poisson'
+  clip : False
+  test: # validation
+    input : "/home/lianghao/TestData/SinglePhoton"
+    target : "/home/Public/ImageProcessing/Image-Denoise/two_photon_mix/test/MICE/gt"
+
+
+test:
+  save : True
+  gpu : True
+  metric_mode : 'rgb' # y
+
+
+

@@ -1,0 +1,47 @@
+global_setting:
+  seed: 20000320 # random seed
+  device : '0' # gpu device id
+  action : 'test'
+  task: 'denoise'
+  record_dir : 'Experiment' # inlet for experiments' results
+  note_name: 'mpcr2net_real_test' # the dir name in experiments log
+  resume :
+    state: True
+    mode : "model_state_dict"
+    checkpoint : "./model_zoo/mc2rnet.pth"
+
+
+directory:
+  vision : 'visions'
+  resume : 'resume_model'
+
+network:
+  task: 'denoise'
+  name : 'mc2rnet'
+  mode : 'gray' # the image type
+  params:
+     in_ch: 1
+     out_ch : 1
+     wf : 64
+     depth : 6
+
+
+
+dataset:
+  name : 'basic_pair'
+  task :
+    name: 'denoise'
+    noise: 'poisson'
+  clip : False
+  test: # validation
+      input : "/home/lianghao/Public/data/fmdd/two_photon_mix/test/MICE/noisy"
+      target : "/home/lianghao/Public/data/fmdd/two_photon_mix/test/MICE/gt"
+
+
+test:
+  save : False
+  gpu : True
+  metric_mode : 'rgb' # y
+
+
+

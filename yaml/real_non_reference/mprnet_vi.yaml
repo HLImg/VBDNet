@@ -1,0 +1,44 @@
+global_setting:
+  seed: 20000320 # random seed
+  device : '0' # gpu device id
+  action : 'real'
+  task: 'denoise'
+  record_dir : 'Experiment' # inlet for experiments' results
+  note_name: 'mprnet_vi_real' # the dir name in experiments log
+  resume :
+    state: True
+    mode : "model"
+    checkpoint : "Experiment/train/denoise/vimprnet/0309_15_15_36/save_model/model_current_0256.pth"
+
+
+directory:
+  vision : 'visions'
+  resume : 'resume_model'
+
+network:
+  task: 'denoise'
+  name : 'vimprnet'
+  mode : 'gray' # the image type
+  params:
+    in_ch: 1
+
+
+
+dataset:
+  name : 'unpair'
+  task :
+    name: 'denoise'
+    noise: 'poisson'
+  clip : False
+  test: # validation
+    input : "/home/lianghao/TestData/SinglePhoton"
+    target : "/home/Public/ImageProcessing/Image-Denoise/two_photon_mix/test/MICE/gt"
+
+
+test:
+  save : True
+  gpu : True
+  metric_mode : 'rgb' # y
+
+
+
