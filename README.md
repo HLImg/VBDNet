@@ -9,3 +9,13 @@ All methods are trained using the same synthetic dataset and tested on synthetic
 ```python
 python main.py --yaml yaml/test_fmd/*.yaml
 ```
+
+```bib
+@article{liang2023variational,
+  title={Variational Bayesian deep network for blind Poisson denoising},
+  author={Liang, Hao and Liu, Rui and Wang, Zhongyuan and Ma, Jiayi and Tian, Xin},
+  journal={Pattern Recognition},
+  year={2023},
+}
+
+```
