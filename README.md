@@ -17,7 +17,9 @@ python main.py --yaml yaml/test_fmd/*.yaml
   journal={Pattern Recognition},
   pages={109810},
   year={2023},
+  doi = {https://doi.org/10.1016/j.patcog.2023.109810},
   publisher={Elsevier}
 }
+
 
 ```
