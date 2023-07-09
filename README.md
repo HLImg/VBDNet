@@ -14,9 +14,10 @@ python main.py --yaml yaml/test_fmd/*.yaml
 @article{liang2023variational,
   title={Variational Bayesian deep network for blind Poisson denoising},
   author={Liang, Hao and Liu, Rui and Wang, Zhongyuan and Ma, Jiayi and Tian, Xin},
-  journal={Pattern Recognition},
+  volume = {143},
   pages={109810},
   year={2023},
+  journal={Pattern Recognition},
   doi = {https://doi.org/10.1016/j.patcog.2023.109810},
   publisher={Elsevier}
 }
